@@ -15,33 +15,25 @@ k$ = INPUT$(1)
 
 DIM obj$(200)
 FOR i = 1 TO 200
-obj$(i) = rndobj$(50)
+obj$(i) = rndobj$(70)
 NEXT
 
 VIEW SCREEN (50, 100)-(600, 450)
-FOR i = 1 TO 197 STEP 3
+FOR i = 1 TO 199
+k$ = INKEY$
+IF k$ = CHR$(27) THEN EXIT FOR
 a1$ = obj$(i)
 a2$ = obj$(i + 1)
 a3$ = obj$(i + 2)
 
 px1 = INT(200 * RND) + 200
 py1 = INT(200 * RND) + 100
-px2 = INT(200 * RND) + 200
-py2 = INT(200 * RND) + 100
-px3 = INT(200 * RND) + 200
-py3 = INT(200 * RND) + 100
 
 FOR j = 1 TO 40
 
 PSET (px1, py1)
 DRAW "S" + STR$(j)
 DRAW a1$
-PSET (px2, py2)
-DRAW "S" + STR$(j)
-DRAW a2$
-PSET (px3, py3)
-DRAW "S" + STR$(j)
-DRAW a3$
 SOUND 21000, 1
 NEXT
 CLS
