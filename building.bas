@@ -6,22 +6,24 @@ DECLARE FUNCTION nospc$ (a$)
 
 CLS
 SCREEN 12
-PRINT "ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป"
-PRINT "บ Analysing 3-D Picture capability ( 3-D ActiveX Control ) บ"
-PRINT "บ               Press any key to start                     บ"
-PRINT "ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ"
+COLOR 15
+PRINT "Building Animation"
+COLOR 7
+PRINT "------------------"
+PRINT
 
-k$ = INPUT$(1)
-
+'prepare
 DIM obj$(200)
 FOR i = 1 TO 200
 obj$(i) = rndobj$(70)
 NEXT
 
+'limit screen range
 VIEW SCREEN (50, 100)-(600, 450)
-FOR i = 1 TO 199
+
+'display objects
+FOR i = 1 TO 198
 k$ = INKEY$
-IF k$ = CHR$(27) THEN EXIT FOR
 a1$ = obj$(i)
 a2$ = obj$(i + 1)
 a3$ = obj$(i + 2)
@@ -29,15 +31,24 @@ a3$ = obj$(i + 2)
 px1 = INT(200 * RND) + 200
 py1 = INT(200 * RND) + 100
 
+'draw object with varying scales
 FOR j = 1 TO 40
-
+k$ = INKEY$
+IF k$ = CHR$(27) THEN EXIT FOR
 PSET (px1, py1)
 DRAW "S" + STR$(j)
 DRAW a1$
 SOUND 21000, 1
 NEXT
+
 CLS
+IF k$ = CHR$(27) THEN EXIT FOR
 NEXT
+
+'end
+COLOR 7
+SCREEN 1
+SYSTEM
 
 REM $STATIC
 FUNCTION nospc$ (a$)
