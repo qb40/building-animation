@@ -1,6 +1,6 @@
 # qb-building-animation
 
-**qb-building-animation** is a small and simple antimation app showing rising building like structures in dos.
+**qb-building-animation** is a simple animation app showing rising building like structures in dos.
 
 
 ##demo
