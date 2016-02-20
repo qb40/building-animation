@@ -3,7 +3,7 @@
 **qb-building-animation** is a simple animation app showing rising building like structures in dos.
 
 
-##demo
+## demo
 
-<img src="/assets/img/0.png" width="70%"><br/>
-<img src="/assets/img/1.png" width="70%"><br/>
+<img src="https://raw.githubusercontent.com/wolfram77/qb-building-animation/gh-pages/0/image/0.png" width="70%"><br/>
+<img src="https://raw.githubusercontent.com/wolfram77/qb-building-animation/gh-pages/0/image/1.png" width="70%"><br/>
